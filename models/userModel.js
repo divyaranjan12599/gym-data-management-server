@@ -1,30 +1,34 @@
 import { model, Schema } from "mongoose";
 
 const appoitmentModel = new Schema({
-
-    ownerName: {
+    gymTitle: {
+        type: String,
+        required: true
+    },
+    gymLogoUrl: {
         type: String
+    },
+    username: {
+        type: String,
+        required: true
+    },
+    ownersName: {
+        type: [String],
+        required: true
     },
     contact: {
-        type: String
+        type: String,
+        required: true
     },
     email: {
-        type: String
-    },
-    status: {
         type: String,
-        enum: Object.values(StatusEnum),
-        default: StatusEnum.PENDING,
+        required: true
     },
-    practiceArea: {
-        type: String
+    password: {
+        type: String,
+        required: true
     },
-    timeSlot: {
-        type: String
-    },
-    date: {
-        type: String
-    },
+
 }, { timeStamp: true });
 
 const Appointment = model("Appointment", appoitmentModel);
