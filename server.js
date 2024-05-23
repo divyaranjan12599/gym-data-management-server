@@ -1,9 +1,10 @@
 import express, { response } from "express";
 import mongoose from "mongoose";
 import cors from 'cors';
+import userRoutes from "./routes/userRoute.js";
 
 
-// dotenv.config()
+// require("dotenv").config()
 
 // express app
 const app = express();
@@ -27,6 +28,8 @@ const connectDb = async () => {
 }
 
 connectDb();
+
+app.use("/user", userRoutes)
 
 const server = app.listen(port, () => {
     console.log("listening on port", port);
