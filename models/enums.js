@@ -20,3 +20,9 @@ export const Gender = {
     MALE: 'male',
     FEMALE: 'female'
 }
+
+export const SourceOfEquiry = {
+    WALKIN: 'walk-in',
+    REFERRAL: 'referral',
+    SOCIALMEDIA: 'social-media'
+}
